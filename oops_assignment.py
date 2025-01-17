@@ -70,6 +70,43 @@ cir.calculateArea()
 cir.calculatecircumfernce()
 print(cir.display())
 
+4..
+class BankAccount:
+    ROI=10.5
+    def __init__(self,name=None,amount=0.0):
+        self.name=name
+        self.amount=amount
+    def accept(self):
+         self.name=input("enter account name: ")
+         self.amount=float(input("Balance : "))
+
+    def display(self):
+        
+        print(f"Account Name:{self.name}")
+        print(f"Amount avilable:{self.amount}")
+
+    def deposit(self):
+        Amount=float(input("enter amount to deposit: "))
+        self.amount+=Amount
+        print(f"amount deposited successfully : {self.amount}")
+
+    def withdraw(self):
+        Amount=float(input("enetr amount to withdraw: "))
+        if Amount>self.amount:
+            print("insufficnt amount")
+        else:
+            self.amount-=Amount
+            print(f"withraw amount is:  {Amount},Remaingn Aount:{self.amount}")
+    def calintrest(self):
+         intrest=(self.amount*BankAccount.ROI)/100
+         print(f"Intrest is :{intrest}")
+
+obj1=BankAccount()
+obj1.accept()
+obj1.display()
+obj1.deposit()
+obj1.withdraw()
+obj1.calintrest()
 
 
 6..
