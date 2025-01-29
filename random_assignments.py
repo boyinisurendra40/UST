@@ -69,7 +69,7 @@ print(f"Multiplication: {float1} * {float2} = {product}")
 import random
 import string
 
-secure_token = ''.join(random.choices(string.hexdigits, k=128))
+secure_token = ''.join(random.choices(string.hexdigits, k=64))
 random_url = f"https://example.com/{''.join(random.choices(string.ascii_letters + string.digits + '-_', k=16))}"
 
 print("Secure Token:", secure_token)
@@ -84,6 +84,19 @@ dice_roll = random.randint(1, 6)
 
 print(f"Dice Roll: {dice_roll}")
 
+Exercise 10: Generate a random date between given start and end dates
+
+import random
+from datetime import datetime, timedelta
+
+start_date = datetime(2020, 1, 1)
+end_date = datetime(2025, 1, 1)
+
+delta = end_date - start_date
+random_days = random.randint(0, delta.days)
+random_date = start_date + timedelta(days=random_days)
+
+print("Random Date:", random_date.strftime('%Y-%m-%d'))
 
 
 
